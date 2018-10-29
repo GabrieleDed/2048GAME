@@ -1,0 +1,238 @@
+import java.util.Random;
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    int x;
+    int y;
+    int [][] masyvas;
+    masyvas= new int [4][4];
+    int sum_laisvi_skaiciai = 0;
+    int nauja_vieta_rasta=0;
+    int active = 0;
+
+    Random rand = new Random();
+
+    int  n = rand.nextInt(15) + 1;
+    y=n/4;
+    x=n%4; 
+      for (int i = 0; i < 4; i++){
+        for (int j = 0; j < 4; j++){
+          masyvas[i][j]=0;
+        }
+      }
+    masyvas [y][x] =2;        
+      for (int i = 0; i < 4; i++){
+        for (int j = 0; j < 4; j++){
+          System.out.print(masyvas[i][j]+" ");
+        }
+      System.out.println();
+      }
+    while (sum_laisvi_skaiciai==0){
+        
+      String left = "a";
+      String right = "d";
+      String up = "w";
+      String down = "s";
+      String stop = "o";
+      Scanner scanner = new Scanner(System.in);
+      String puse = scanner.nextLine();
+        if (puse.equals(left))
+        {
+          for (int i = 0; i <= 3; i++){
+            for (int j = 0; j <3; j++){
+              if (masyvas[i][j]==0&&masyvas[i][j+1]>0){
+                masyvas[i][j]=masyvas[i][j+1];
+                masyvas[i][j+1]=0;
+                active = 1;
+              }
+              if (masyvas[i][j]==masyvas[i][j+1]&&masyvas[i][j+1]>0&&masyvas[i][j]>0){
+                masyvas[i][j]=masyvas[i][j+1]*2;
+                masyvas[i][j+1]=0;
+                active = 1;
+              }   
+            }
+          }
+         
+          for (int i = 3; i >= 0; i--){
+            for (int j = 3; j > 0; j--){
+              if (masyvas[i][j-1]==0&&masyvas[i][j]>0){
+                masyvas[i][j-1]=masyvas[i][j];
+                masyvas[i][j]=0;
+                active = 1;
+              }    
+              if (masyvas[i][j-1]==masyvas[i][j]&&masyvas[i][j-1]>0){
+                masyvas[i][j-1]=masyvas[i][j-1]*2;
+                masyvas[i][j]=0;
+              }
+            }
+          }
+          if ( active == 1){
+            while (nauja_vieta_rasta==0){
+               n = rand.nextInt(15) + 1;
+                y=n/4;
+                x=n%4; 
+              if (masyvas [y][x] ==0){
+                masyvas [y][x] =2; 
+                nauja_vieta_rasta=1;
+              } 
+            }
+          nauja_vieta_rasta=0;
+          }
+          active = 0;
+        }
+        if (puse.equals(right)){
+          for (int i = 3; i >= 0; i--){
+            for (int j = 3; j >0; j--){
+              if (masyvas[i][j]==0&&masyvas[i][j-1]>0){
+                masyvas[i][j]=masyvas[i][j-1];
+                masyvas[i][j-1]=0;
+                active = 1;
+              }
+              if (masyvas[i][j]==masyvas[i][j-1]&&masyvas[i][j]>0&&masyvas[i][j-1]>0){
+                masyvas[i][j]=masyvas[i][j-1]*2;
+                masyvas[i][j-1]=0;
+                active = 1;
+              }   
+            }
+          }
+          for (int i = 0; i <= 3; i++){
+            for (int j = 0; j < 3; j++){
+              if (masyvas[i][j+1]==0&&masyvas[i][j]>0){
+                masyvas[i][j+1]=masyvas[i][j];
+                masyvas[i][j]=0;
+                active = 1;
+              }
+              if (masyvas[i][j+1]==masyvas[i][j]&&masyvas[i][j+1]>0){
+                masyvas[i][j+1]=masyvas[i][j+1]*2;
+                masyvas[i][j]=0;
+              }
+            }
+          }
+          if ( active == 1){
+            while (nauja_vieta_rasta==0){
+               n = rand.nextInt(15) + 1;
+                y=n/4;
+                x=n%4; 
+                  if (masyvas [y][x] ==0){
+                    masyvas [y][x] =2; 
+                    nauja_vieta_rasta=1;
+                  } 
+            }
+            nauja_vieta_rasta=0;
+          }
+          active = 0;
+      }
+      if (puse.equals(down)){
+          for (int i = 3; i>0; i--){
+            for (int j = 3; j >= 0; j--){
+              if (masyvas[i][j]==0&&masyvas[i-1][j]>0){
+                masyvas[i][j]=masyvas[i-1][j];
+                masyvas[i-1][j]=0;
+                active = 1;
+              }
+              if (masyvas[i][j]==masyvas[i-1][j]&&masyvas[i][j]>0&&masyvas[i-1][j]>0){
+                masyvas[i][j]=masyvas[i-1][j]*2;
+                masyvas[i-1][j]=0;
+                active = 1;
+              }       
+            }
+          }
+          for (int i = 0; i < 3; i++){
+            for (int j = 0; j <= 3; j++){
+              if (masyvas[i+1][j]==0&&masyvas[i][j]>0){
+                masyvas[i+1][j]=masyvas[i][j];
+                masyvas[i][j]=0;
+                active = 1;
+              }
+              if (masyvas[i+1][j]==masyvas[i][j]&&masyvas[i+1][j]>0){
+                masyvas[i+1][j]=masyvas[i+1][j]*2;
+                masyvas[i][j]=0;
+              }
+            }
+          }
+          if ( active == 1){
+            while (nauja_vieta_rasta==0){
+               n = rand.nextInt(15) + 1;
+                y=n/4;
+                x=n%4; 
+              if (masyvas [y][x] ==0){
+                masyvas [y][x] =2; 
+                nauja_vieta_rasta=1;
+              } 
+          }
+          nauja_vieta_rasta=0;
+          }
+          active = 0;
+      }
+      if (puse.equals(up))
+        {
+          for (int i = 0; i < 3; i++){
+            for (int j = 0; j <= 3; j++){
+              if (masyvas[i][j]==0&&masyvas[i+1][j]>0){
+                masyvas[i][j]=masyvas[i+1][j];
+                masyvas[i+1][j]=0;
+                active = 1;
+              }
+              if (masyvas[i][j]==masyvas[i+1][j]&&masyvas[i+1][j]>0&&masyvas[i][j]>0){
+                masyvas[i][j]=masyvas[i+1][j]*2;
+                masyvas[i+1][j]=0;
+                active = 1;
+              }
+            }
+          }
+           for (int i = 3; i > 0; i--){
+            for (int j = 3; j >= 0; j--){
+              if (masyvas[i-1][j]==0&&masyvas[i][j]>0){
+                masyvas[i-1][j]=masyvas[i][j];
+                masyvas[i][j]=0;
+                active = 1;
+              }   
+              if (masyvas[i-1][j]==masyvas[i][j]&&masyvas[i-1][j]>0){
+                masyvas[i-1][j]=masyvas[i-1][j]*2;
+                masyvas[i][j]=0;
+              }
+            }
+          }
+          if ( active == 1){
+            while (nauja_vieta_rasta==0){
+               n = rand.nextInt(15) + 1;
+                y=n/4;
+                x=n%4; 
+              if (masyvas [y][x] ==0){
+                masyvas [y][x] =2; 
+                nauja_vieta_rasta=1;
+              } 
+          }
+          nauja_vieta_rasta=0;
+          }
+          active = 0;
+        }
+         for (int i = 0; i < 4; i++){
+          for (int j = 0; j < 4; j++){   
+            if (i==3&&j==3&&masyvas[i][j]!=0){
+              sum_laisvi_skaiciai=1;
+          System.out.println("Game over");
+            }
+            if (masyvas[i][j]==0){
+              i=3;
+              j=3;
+              sum_laisvi_skaiciai=0;
+            }
+          }
+         }
+         if (puse.equals(stop))
+        {
+          sum_laisvi_skaiciai=1;
+          System.out.println("Game over");
+        }
+          System.out.println();
+        for (int i = 0; i < 4; i++){
+          for (int j = 0; j < 4; j++){
+            System.out.print(masyvas[i][j]+" ");
+          }
+          System.out.println();
+        }
+    }
+  }
+}
