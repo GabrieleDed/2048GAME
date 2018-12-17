@@ -35,6 +35,7 @@ public class GoRight extends AddNumbers{
                 aktyvus = 1;
               }
               if (table[i][j+1]==table[i][j]&&table[i][j+1]>0){
+                  number=table[i][j+1];
                 table[i][j+1]=num.AddNumber(number);
                 table[i][j]=0;
               }

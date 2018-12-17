@@ -23,7 +23,7 @@ public class Atsiskaitymas {
         
     int n = 0, x = 0, y = 0, sum_laisvi_skaiciai = 0, nauja_vieta_rasta=0, aktyvus = 1;
     
-    String side;
+    
     
     int [][] masyvas;
     masyvas= new int [4][4];
@@ -40,10 +40,15 @@ public class Atsiskaitymas {
       String puse = scanner.nextLine();
         if (puse.equals(left))
         {
-            side = "Kairen";
-            System.out.println(side);
+            
             gleft.goingLeft(masyvas, aktyvus);
-                if (aktyvus == 0) System.out.println("Game over");
+                if (aktyvus == 0) 
+                {
+                    sum_laisvi_skaiciai=1;
+                    gam.spausdintiLentele(masyvas);
+                    System.out.println();
+                    System.out.println("Game over");
+                }
                 else if (aktyvus == 1)
                 {
                     ctable.findaRandomPlace(masyvas, aktyvus);
@@ -53,10 +58,15 @@ public class Atsiskaitymas {
         }
         
         if (puse.equals(right)){
-            side = "Desnen";
-            System.out.println(side);
+           
             gright.goingRight(masyvas, aktyvus);
-                if (aktyvus == 0) System.out.println("Game over");
+                if (aktyvus == 0)
+                {
+                    sum_laisvi_skaiciai=1;
+                    gam.spausdintiLentele(masyvas);
+                    System.out.println();
+                    System.out.println("Game over");
+                }
                 else if (aktyvus == 1)
                 {
                     ctable.findaRandomPlace(masyvas, aktyvus);
@@ -65,10 +75,16 @@ public class Atsiskaitymas {
           System.out.println();
         }
           if (puse.equals(down)){
-            side = "Zemyn";
-            System.out.println(side);
+            
+            
           gdown.goingDown(masyvas, aktyvus);
-                if (aktyvus == 0) System.out.println("Game over");
+                if (aktyvus == 0) 
+                {
+                    sum_laisvi_skaiciai=1;
+                    gam.spausdintiLentele(masyvas);
+                    System.out.println();
+                    System.out.println("Game over");
+                }
                 else if (aktyvus == 1)
                 {
                     ctable.findaRandomPlace(masyvas, aktyvus);
@@ -78,10 +94,15 @@ public class Atsiskaitymas {
       }
       if (puse.equals(up))
         {
-            side = "Aukstyn";
-            System.out.println(side);
+            
           gup.goingUp(masyvas, aktyvus);
-                if (aktyvus == 0) System.out.println("Game over");
+                if (aktyvus == 0) 
+                {
+                    sum_laisvi_skaiciai=1;
+                    gam.spausdintiLentele(masyvas);
+                    System.out.println();
+                    System.out.println("Game over");
+                }
                 else if (aktyvus == 1)
                 {
                     ctable.findaRandomPlace(masyvas, aktyvus);
