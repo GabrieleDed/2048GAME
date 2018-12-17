@@ -9,9 +9,13 @@ package Logika;
  *
  * @author gaded
  */
-public class GoDown {
+public class GoDown{
     public void goingDown (int [][]table, int aktyvus){
+        AddNumbers num = new AddNumbers();
+        int number =0;
+        
      for (int i = 3; i>0; i--){
+         
             for (int j = 3; j >= 0; j--){
               if (table[i][j]==0&&table[i-1][j]>0){
                 table[i][j]=table[i-1][j];
@@ -33,8 +37,12 @@ public class GoDown {
                 aktyvus = 1;
               }
               if (table[i+1][j]==table[i][j]&&table[i+1][j]>0){
-                table[i+1][j]=table[i+1][j]*2;
-                table[i][j]=0;
+                  
+                  number=table[i+1][j];
+                  num.AddNumber(number);
+                  table[i+1][j]=number;
+                  table[i][j]=0;
+                
               }
             }
           

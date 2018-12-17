@@ -13,6 +13,7 @@ public class PrintTable {
     private int height;
     private int length;
     private int randomplace;
+    
 
     public PrintTable(int[][] lentele, int height, int length, int randomplace) {
         this.lentele = lentele;

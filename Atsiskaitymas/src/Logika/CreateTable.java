@@ -9,7 +9,7 @@ package Logika;
  *
  * @author gaded
  */
-public class CreateTable {
+public class CreateTable extends RandomPlace{
     public void sukurtiLentele (int[][] lentele)
     {
                 

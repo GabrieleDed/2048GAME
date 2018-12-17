@@ -11,7 +11,6 @@ public class Atsiskaitymas {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
         CreateTable ctable = new CreateTable();
         Gameplay gam = new Gameplay();
         GoLeft gleft = new GoLeft();
@@ -20,7 +19,7 @@ public class Atsiskaitymas {
         GoDown gdown = new GoDown();
         GameOver gover = new GameOver();
         
-        RandomPlace rplace = new RandomPlace();
+        
         Random rand = new Random();
         
     int n = 0, x = 0, y = 0, sum_laisvi_skaiciai = 0, nauja_vieta_rasta=0, aktyvus = 1;
@@ -32,7 +31,7 @@ public class Atsiskaitymas {
 
     
     ctable.sukurtiLentele(masyvas);
-    rplace.findaRandomPlace(masyvas, aktyvus);
+    ctable.findaRandomPlace(masyvas, aktyvus);
     gam.spausdintiLentele(masyvas);
 
     while (sum_laisvi_skaiciai==0){
@@ -48,7 +47,7 @@ public class Atsiskaitymas {
                 if (aktyvus == 0) System.out.println("Game over");
                 else if (aktyvus == 1)
                 {
-                    rplace.findaRandomPlace(masyvas, aktyvus);
+                    ctable.findaRandomPlace(masyvas, aktyvus);
                 }
           gam.spausdintiLentele(masyvas);
           System.out.println();
@@ -61,7 +60,7 @@ public class Atsiskaitymas {
                 if (aktyvus == 0) System.out.println("Game over");
                 else if (aktyvus == 1)
                 {
-                    rplace.findaRandomPlace(masyvas, aktyvus);
+                    ctable.findaRandomPlace(masyvas, aktyvus);
                 }
           gam.spausdintiLentele(masyvas);
           System.out.println();
@@ -73,7 +72,7 @@ public class Atsiskaitymas {
                 if (aktyvus == 0) System.out.println("Game over");
                 else if (aktyvus == 1)
                 {
-                    rplace.findaRandomPlace(masyvas, aktyvus);
+                    ctable.findaRandomPlace(masyvas, aktyvus);
                 }
            gam.spausdintiLentele(masyvas);
            System.out.println();
@@ -86,7 +85,7 @@ public class Atsiskaitymas {
                 if (aktyvus == 0) System.out.println("Game over");
                 else if (aktyvus == 1)
                 {
-                    rplace.findaRandomPlace(masyvas, aktyvus);
+                    ctable.findaRandomPlace(masyvas, aktyvus);
                 }
           gam.spausdintiLentele(masyvas);
           System.out.println();

@@ -13,11 +13,13 @@ public class Movement {
     private int [][] table;
     int aktyvus;
     int gameIsOver;
+    int number;
 
-    public Movement(int[][] table, int aktyvus, int gameIsOver) {
+    public Movement(int[][] table, int aktyvus, int gameIsOver, int number) {
         this.table = table;
         this.aktyvus = aktyvus;
         this.gameIsOver = gameIsOver;
+        this.number = number;
     }
 
     public int[][] getTable() {
@@ -43,6 +45,17 @@ public class Movement {
     public void setGameIsOver(int gameIsOver) {
         this.gameIsOver = gameIsOver;
     }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+    
+
+   
 
     
     
