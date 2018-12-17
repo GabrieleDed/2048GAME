@@ -9,7 +9,7 @@ package Logika;
  *
  * @author gaded
  */
-public class GoDown{
+public class GoDown extends AddNumbers{
     public void goingDown (int [][]table, int aktyvus){
         AddNumbers num = new AddNumbers();
         int number =0;
@@ -39,8 +39,8 @@ public class GoDown{
               if (table[i+1][j]==table[i][j]&&table[i+1][j]>0){
                   
                   number=table[i+1][j];
-                  num.AddNumber(number);
-                  table[i+1][j]=number;
+                  
+                  table[i+1][j]=num.AddNumber(number);
                   table[i][j]=0;
                 
               }

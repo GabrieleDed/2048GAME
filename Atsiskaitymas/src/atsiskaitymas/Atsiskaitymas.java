@@ -19,7 +19,6 @@ public class Atsiskaitymas {
         GoDown gdown = new GoDown();
         GameOver gover = new GameOver();
         
-        
         Random rand = new Random();
         
     int n = 0, x = 0, y = 0, sum_laisvi_skaiciai = 0, nauja_vieta_rasta=0, aktyvus = 1;

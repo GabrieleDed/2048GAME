@@ -13,6 +13,7 @@ public class AddNumbers {
     
     public int AddNumber(int number) {
         int suma=0;
+        System.out.println( number*2);
         return suma = number*2;
     } 
 }

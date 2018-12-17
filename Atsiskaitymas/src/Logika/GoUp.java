@@ -2,7 +2,7 @@
 package Logika;
 
 
-public class GoUp {
+public class GoUp extends AddNumbers{
     public void goingUp (int [][]table, int aktyvus){
      for (int i = 0; i < 3; i++){
             for (int j = 0; j <= 3; j++){

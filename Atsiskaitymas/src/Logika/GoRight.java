@@ -9,8 +9,10 @@ package Logika;
  *
  * @author gaded
  */
-public class GoRight {
+public class GoRight extends AddNumbers{
     public void goingRight (int [][]table, int aktyvus){
+        AddNumbers num = new AddNumbers();
+        int number =0;
       for (int i = 3; i >= 0; i--){
             for (int j = 3; j >0; j--){
               if (table[i][j]==0&&table[i][j-1]>0){
@@ -33,7 +35,7 @@ public class GoRight {
                 aktyvus = 1;
               }
               if (table[i][j+1]==table[i][j]&&table[i][j+1]>0){
-                table[i][j+1]=table[i][j+1]*2;
+                table[i][j+1]=num.AddNumber(number);
                 table[i][j]=0;
               }
             }
